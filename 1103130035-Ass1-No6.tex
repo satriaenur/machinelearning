@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+Nama : Satria Nur Hidayatullah
+
+NIM : 1103130035
+
+Kelas : MachineLearning-Gab-01\\
+
+\begin{enumerate}
+	\setcounter{enumi}{5}
+	\item
+	\begin{enumerate}
+		\item Algoritma :\\
+		a, b = array of integer\\
+		for i to all data:\\
+		if movie\_id of i == movie1: append user\_id i to a\\
+		if movie\_id of i == movie2: append user\_id i to b\\
+		endfor\\
+		countboth = count same value in a b\\
+		return countboth / (length a + length b - countboth)
+		\item 0.597
+		\item Goodfellas, The Godfather: Part II, Chinatown, One Flew Over the Cuckoo's Nest, Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb
+		\item Film pilihan : Home Alone 3.\\
+		5 Highest Jaccard Coefficient: Mr. Magoo, Half Baked, Wild America, A Simple Wish, Gilligan's Island\\
+		Gak pernah nonton, tapi kalau dari judulnya make sense, kaya film anak anak
+	\end{enumerate}
+	\item
+	\begin{enumerate}
+	\item Algoritma:\\
+	a, b = array of integer\\
+	rate1, rate2 = dictionary
+	for i to all data:\\
+	if movie\_id of i == movie1:
+	append user\_id i to a\\
+	rate1 with key user\_id of i = rating of i\\
+	endif\\
+	if movie\_id of i == movie2:
+	append user\_id i to b\\
+	rate2 with key user\_id of i = rating of i\\
+	endif\\
+	endfor\\
+	both = get same value in a b\\
+	if length both = 0: return 0\\
+	bothrate1,bothrate2 = dictionary\\
+	avg1,avg2 = 0\\
+	for i in both:\\
+	bothrate1 with key i = rate1[i]\\
+	bothrate2 with key i = rate2[i]\\
+	avg1 += rate1[i]\\
+	avg2 += rate2[i]\\
+	endfor\\
+	avg1,avg2 = avg1/length both,avg2/length both\\
+	top, down1, down2 = 0\\
+	for i in both:\\
+	top += (bothrate1[i] - avg1)*(bothrate2[i] - avg2)\\
+	down1 += (bothrate1[i] -avg1)\^2\\
+	down2 += (bothrate2[i] - avg2)\^2\\
+	endfor\\
+	return top/(sqrt(down1) * sqrt(down2)\\
+	\item 0.221
+	\item 0.759
+	\item Free Willy 2: The Adventure Home, Crossfire, Dream With the Fishes, City of Angels, The Flower of My Secret (La Flor de mi secreto)
+	\item Chosen: Home Alone 3, Best: GoldenEye, The Santa Clause, Air Bud, Mrs. Brown (Her Majesty, Mrs. Brown), Deconstructing Harry
+	\end{enumerate}
+	\item Pakai Correlation Coefficient, karena apabila menggunakan Jaccard, user yang memberikan rating rendah pada film pertama, tinggi pada film kedua memiliki kesempatan untuk menjadi 5 best similar.
+\end{enumerate}
+
+\end{document}
